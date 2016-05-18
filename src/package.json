@@ -1,0 +1,23 @@
+{
+  "name": "wp-gulp",
+  "description": "Example of using Gulp with WordPress",
+  "version": "1.0.0",
+  "title": "WP Gulp",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.1",
+    "gulp-uglify": "^1.5.3",
+    "gulp-watch": "^4.3.5",
+    "imagemin-gifsicle": "^5.0.0",
+    "imagemin-jpegtran": "^5.0.0",
+    "imagemin-optipng": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.1.0"
+  }
+}
