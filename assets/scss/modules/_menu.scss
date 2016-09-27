@@ -1,0 +1,25 @@
+/*
+|----------------------------------------------
+| Menu
+|----------------------------------------------
+*/
+
+//mark menu
+    .home .menu-link[title*="Home"],
+    .page-produtos .menu-link[title*="Produtos"],
+    .page-contato .menu-link[title*="Contato"]{color:$cl1!important;}
+
+
+//** navbar
+.navbar{
+  margin-bottom: inherit;
+  border:none;
+  padding: 15px 0px;
+}
+    .menu-link{
+      display: block;
+      font:ft-convert(18) $ft2;
+      color:$cl3;
+      //text-transform: uppercase;
+    }
+

@@ -1,0 +1,21 @@
+/*
+|----------------------------------------------
+| Fonts
+|----------------------------------------------
+*/
+
+$ft-dir       : '../fonts/';
+$ft-family    : $ft1, $ft2;
+$ft-archive   : $fta1, $fta2;
+
+$fonts        : zip($ft-family, $ft-archive);
+
+@each $f in $fonts{
+    @font-face {
+        font-family: '#{nth($f, 1)}'; 
+        src: url('#{$ft-dir}#{nth($f, 2)}.eot'); 
+        src: url('#{$ft-dir}#{nth($f, 2)}.eot?#iefix') format('embedded-opentype'), 
+             url('#{$ft-dir}#{nth($f, 2)}.woff') format('woff'), 
+             url('#{$ft-dir}#{nth($f, 2)}.ttf') format('truetype');
+    }
+}

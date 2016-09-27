@@ -1,12 +1,209 @@
 @charset "UTF-8";
 
-@import "modulos/bootstrap";
+/*
 
-.container{
-	background-color: green;
-	h1{
-		color:white;
-		font-family: Arial;
-		text-align:center;
+** FRAMEWORK'S CSS
+    -- compass
+
+
+** GLOBAL
+    -- animate
+    -- variables
+    -- placeholder
+    -- mixins
+    -- reset
+    -- normalize
+    -- fonts
+
+** MODULES
+    -- helpers
+    -- grid
+    -- menu
+    -- form
+    -- tabelas
+    -- tabs
+    -- tooltip
+    -- modal
+    -- box
+    -- galerias
+
+** SECTIONS
+	-- header
+	-- footer
+	-- inner content
+
+** CUSTOM SECTIONS
+    --
+
+****
+****
+
+*/
+
+
+// **
+// FRAMEWORK'S CSS
+// **
+//@import "compass";
+
+// **
+// GLOBAL
+// **
+//@import "global/animate";
+@import "global/variables";
+@import "global/placeholder" ;
+@import "global/mixins";
+@import "global/reset";
+@import "global/normalize";
+@import "global/fonts";
+
+// **
+// MODULES
+// **
+@import "modules/helpers";
+@import "modules/bootstrap";
+@import "modules/grid";
+@import "modules/menu";
+@import "modules/form";
+@import "modules/swiper";
+//@import "modules/tabelas";
+//@import "modules/tabs";
+//@import "modules/tooltip";
+//@import "modules/modal";
+//@import "modules/box";
+//@import "modules/galerias";
+@import "modules/buttons";
+
+// **
+// SECTIONS
+// **
+@import "sections/header";
+@import "modules/menu";
+@import "sections/footer";
+@import "sections/inner-content";
+@import "sections/query";
+
+/*
+|----------------------------------------------
+| main custom
+|----------------------------------------------
+*/
+
+//**
+// parallax padrão
+//**
+#intro{
+	width: 100%;
+	height:450px;
+	background:url('../images/paralax.jpg') 50% 0 no-repeat fixed;
+	padding-top:95px;
+	.titulo{
+		color: $cl4;
+	}
+
+	.descplay{
+		color: $cl4;
+		text-align: center  ;
+		margin-top: 15px;
 	}
 }
+
+
+body{
+	background-color: orange;
+}
+
+
+
+//for para cores e margin nos titulos
+
+// @for $i from 1 through 6 {
+//   h#{$i} {
+//       //margin: 10px 0 0;
+//       font-family: $ft1;
+//     }
+// }
+.diferenciais{
+	// background: url('../images/img-homens.png') center bottom no-repeat;
+	// padding-bottom:420px;
+}
+.tit{
+	margin:30px 0;
+	&__2{
+		font:ft-convert(32) $ft2;
+		color: $cl2;
+		&--center{
+			text-align: center;
+		}
+		&--rdp{
+			color: $cl1;
+			text-align: center;
+		}
+	}
+}
+
+
+
+
+// retirar padding's das cols do grid
+.no-gutter > [class*='col-'] {
+	padding-right:0;
+	padding-left:0;
+}
+
+
+/* mudar selecao */
+::-moz-selection {color:#000; background:#d74a2c; text-shadow:none;}
+::selection {color:#000; background:#d74a2c; text-shadow:none;}
+
+
+
+
+*,
+*:after,
+*:before {
+	@include box-sizing(border-box);
+}
+
+/* css micro clearfix */
+.cf{@extend %clearfix}
+
+
+/* Style Custom for CK Editor */
+
+.content-page{
+	ul{
+		margin:20px;
+		padding-left:30px;
+		li{
+			list-style: disc;
+		}
+	}
+}
+
+img.aligncenter{
+	display: block;
+	margin:auto;
+}
+
+img.alignleft{
+	float: left;
+	margin: 0px 15px 15px 0px;
+}
+
+img.alignright{
+	float: right;
+	margin: 0px 0px 15px 15px;
+}
+
+@media screen and (max-width: 480px){
+
+	img.alignright,img.alignleft,img.aligncenter {
+		float: none;
+		margin: auto;
+		display: block;
+		max-width: 100%;
+	}
+
+}
+

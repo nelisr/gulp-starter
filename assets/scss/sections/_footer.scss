@@ -1,0 +1,38 @@
+/*
+|----------------------------------------------
+| footer
+|----------------------------------------------
+*/
+
+.rdp{
+  background: $cl3;
+  padding-top:70px;
+}
+.logo-pe{
+  @include img('logo.png');
+  background-size: 100%;
+}
+.address{
+  @extend p;
+  text-align: right;
+  color:$cl1;
+    strong{
+      margin-top: 25px;
+      font-size:$t-m;
+      display: block;
+      span{
+        font-size:$t-p;
+      }
+    }
+}
+
+.creditos{
+  margin-top:100px;
+  background:$cl1;
+  padding: 12px 0;
+  small,a{
+    color: $cl3;    
+    font-size: $t-p;
+  }
+
+}

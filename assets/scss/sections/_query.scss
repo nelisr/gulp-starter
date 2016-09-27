@@ -1,0 +1,150 @@
+/*
+|----------------------------------------------
+| _query 320
+|----------------------------------------------
+*/
+@media only screen and (max-width:320px) {  
+    
+    /* Galeria da Home */
+    .single-galeria li.list-tao{
+        img{
+            width:110px;
+            height:74px;
+        }
+        &:nth-child(1n){
+            margin:0 7px 15px 7px;
+        }
+    }
+
+}
+
+/*
+|----------------------------------------------
+| _query 480
+|----------------------------------------------
+*/
+@media only screen and (max-width: 480px){
+
+
+
+}
+
+/*
+|----------------------------------------------
+| _query 600
+|----------------------------------------------
+*/
+@media only screen and (max-width:600px) {
+
+
+
+}
+
+/*
+|----------------------------------------------
+| _query 768
+|----------------------------------------------
+*/
+@media only screen and (max-width:768px) {
+
+
+
+}
+
+/*
+|----------------------------------------------
+| _query 800
+|----------------------------------------------
+*/
+@media only screen and (max-width:800px) {
+
+    /* Personaliza Header Responsivo*/
+    .header{
+        .navbar-default {
+            .navbar-toggle{
+                border-color: transparent;
+            }
+
+            .navbar-toggle:hover,  .navbar-toggle:focus{
+                background: transparent;
+            }
+
+            .icon-bar{
+                background-color:$cl3 ;
+            }
+        }
+    }
+
+
+
+    /* Logo Responsivo ( Redimeciona )*/
+    .logo{
+        @include size(51px,58px);
+        background-size: 100%;
+    }
+
+    /* Inner Content Responsivo */
+    .cont{
+      padding-top:100px;
+      .tits{
+        margin-top: 0;
+        .tit-nivel2{
+          color: $cl2;
+          //border-bottom:1px solid $cl2;
+        }
+      }
+    }
+    
+    /* Rodapé Responsivo*/
+    .rdp{
+        padding-bottom: 10px;
+        margin-top: 35px;
+        .iframe, .menu{
+            display: none;
+        }
+    }
+
+    .address{
+        margin-left: 0;
+        //text-align: center;
+        p{
+            font:ft-convert(20) $ft1;
+            width: 100%;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    }
+    
+    .fone{
+        font-size:$t-gg!important;
+    }
+
+    .direitos{
+        display: none;
+    }
+
+    .edeas{
+        margin-top:13px;
+        text-align: right;
+    }
+   
+    /* Outros Estilos Responsivo*/
+
+    .area .input{
+    margin-bottom: 7px ;
+    }
+
+    .prev1, .next1, .prev, .next, .img-content{
+    display: none!important;
+    }
+
+    .form-contato{
+    margin: 0;
+    }
+
+
+    
+}
+
+
+

@@ -1,0 +1,185 @@
+/*
+|----------------------------------------------
+| Form
+|----------------------------------------------
+*/
+.form{
+    display:inline-table;
+    margin-top:25px;
+    .button{
+      margin-top:10px;
+      border:0;
+    }
+}
+
+.wpcf7{
+    width: 100%;
+    position: relative;
+}
+
+.legenda{
+    font:$t-m $ft1;
+}
+label{
+  margin-top:15px;
+}
+
+.curriculo{
+  font-size:.78em;
+}
+.opc{
+  margin:25px 0;
+  .wpcf7-list-item-label{
+  font:$t-m $ft1;
+  }
+  .last{
+    margin-left:15px;
+  }
+}
+// .input, .textarea {
+//     width:100%;
+//     height:48px;
+//     margin-bottom: 7px;
+//     float:left;
+//     text-indent: 15px;
+//     border:1px solid $cl1;
+//     color:$cl3;
+//     font-family: $ft1;
+//     }
+//         .input:focus, .textarea:focus{
+//             border-color:$cl1;
+//             color:$cl1
+//         }
+//     .textarea{
+//         height:100px;
+//     }
+
+/*
+.form-contato .bt{
+    background: $cl3; float: right;
+    &:hover{
+        background:$cl2;
+    }
+    &:active{
+    background:$cl3;
+  }
+}*/
+
+
+
+
+/* Tooltipes Formulário */
+div.wpcf7-validation-errors {
+    border:0!important
+}
+
+
+
+span.wpcf7-not-valid-tip {
+    color:$cl2!important;
+    font:ft-convert(14) $ft1;
+    display: block;
+}
+
+
+div.wpcf7-response-output {
+//    display: none!important;
+font:ft-convert(14) $ft1;
+clear: both;
+color:$cl2!important;
+}
+
+div.wpcf7-mail-sent-ok {
+    border:0!important;
+    color: $cl6!important;
+    background:$cl1!important;
+}
+
+// .email{display: block!important;}
+// div.wpcf7-response-output{
+// 	margin:0;
+// 	padding: 0;
+// 	}
+// span.wpcf7-not-valid-tip{
+// 	position: absolute;
+// 	width: 75%;
+// 	color: #fff!important;
+// 	font-size:.8em;
+// 	background:#a15641;
+// 	height: 30px;
+// 	line-height: 30px;
+// 	text-align: center;
+// 	border-radius: 6px;
+// 	top:-15px;
+// 	left: 0;
+//     right: 0;
+//     margin: 0 auto;
+// 	}
+// span.wpcf7-not-valid-tip:after{
+// 	content: '';
+// 	position: absolute;
+// 	top: 28px;
+// 	left: 50%;
+// 	margin-left: -8px;
+// 	width: 0;
+// 	height: 0;
+// 	border-top: 8px solid #a15641;
+// 	border-right: 8px solid transparent;
+// 	border-left: 8px solid transparent;
+// 	}
+// div.wpcf7-validation-errors, div.wpcf7-mail-sent-ng{
+// 	position: absolute;
+// 	width: 80%;
+// 	color: #fff!important;
+// 	font-size:.8em;
+// 	background: #a15641;
+// 	border:0!important;
+// 	text-align: center;
+// 	border-radius: 6px;
+// 	top:300px;
+// 	left: 0;
+//     right:0;
+//     margin: 0 auto;
+// 	padding:2px 0;
+// 	}
+// div.wpcf7-validation-errors:before, div.wpcf7-mail-sent-ng:before{
+// 	content: '';
+// 	position: absolute;
+// 	top: -8px;
+// 	left: 50%;
+// 	margin-left: -8px;
+// 	width: 0;
+// 	height: 0;
+// 	border-bottom: 8px solid #a15641;
+// 	border-right: 8px solid transparent;
+// 	border-left: 8px solid transparent;
+// 	}
+// div.wpcf7-mail-sent-ng{
+// 	width:740px!important;
+// 	}
+// .wpcf7-mail-sent-ok{
+// 	position: absolute;
+// 	width: 75%;
+// 	color: #FFFFFF;
+// 	font-size:.8em;
+// 	background: #d6cb6f;
+// 	border:0!important;
+// 	height: 30px;
+// 	line-height: 30px;
+// 	text-align: center;
+// 	border-radius: 6px;
+// 	top: -38px;
+// 	left: 0;
+// 	}
+// .wpcf7-mail-sent-ok:after{
+// 	content: '';
+// 	position: absolute;
+// 	top: 100%;
+// 	left: 50%;
+// 	margin-left: -8px;
+// 	width: 0;
+// 	height: 0;
+// 	border-top: 8px solid #d6cb6f;
+// 	border-right: 8px solid transparent;
+// 	border-left: 8px solid transparent;
+// 	}

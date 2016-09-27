@@ -1,0 +1,130 @@
+/*
+|----------------------------------------------
+| Mixins e Functions
+|----------------------------------------------
+*/
+
+// Tamanho dinamico
+@mixin size($width, $height : $width) {
+	width:$width;
+	height:$height;
+}
+
+
+//center
+@mixin center($top, $bot : $top) {
+    display : block ;
+    margin  : {
+        top:$top;
+        right : auto ;
+        bottom:$bot;
+        left: auto;
+    }
+}
+
+
+@mixin img($imageUrl, $float: left){
+    overflow : hidden;
+    text-indent: -9999px;
+    @include image-box($imageUrl);
+}
+
+
+// centralizar as posições a caixa
+@mixin zero($top, $rig, $but, $lef) {
+
+   position : absolute;
+   margin:auto;
+   z-index: 999;
+   top:$top;
+   right :$rig;
+   bottom:$but;
+   left:$lef;
+
+}
+
+
+// Background e borda
+@mixin bg-bd($bg, $bd-cor){
+    background: $bg;
+    border-bottom:2px solid $bd-cor;
+}
+
+
+// Largura e altura dinamica por compass
+@mixin image-box($imageUrl) {
+    width  : image-width($imageUrl);
+    height : image-height($imageUrl);
+    background-image : image-url($imageUrl);
+}
+
+// Image Replacement
+@mixin img-rep($imageUrl, $float: left){
+    float : $float;
+    overflow : hidden;
+    text-indent: -9999px;
+    @include image-box($imageUrl);
+}
+
+// function of the  ft-convert
+// passar valor em px, retorna o equivalente em EM
+@function ft-convert($val, $reverse:false) {
+    @if ($reverse==true){
+        $calc : $val * 16;
+        @return $calc#{px};
+    }@else{
+        $calc : $val / 16;
+        @return $calc#{em};
+    }
+}
+
+// Background e cor
+@mixin back($bg, $cor){
+    background: $bg;
+    color: $cor;
+}
+
+// Responsivos Mixins
+@mixin bp-large {
+  @media only screen and (max-width: 60em) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media only screen and (max-width: 40em) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media only screen and (max-width: 30em) {
+    @content;
+  }
+}
+
+
+// function of the  ft-convert
+// passar valor em px, retorna o equivalente em EM
+@function ft-convert($val, $reverse:false) {
+    @if ($reverse==true){
+        $calc : $val * 16;
+        @return $calc#{px};
+    }@else{
+        $calc : $val / 16;
+        @return $calc#{em};
+    }
+}
+
+
+
+
+//box-sizing
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+
+
+@function src($url){ $urls : image-url($url); @return $urls; }

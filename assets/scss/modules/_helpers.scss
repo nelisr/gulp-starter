@@ -1,0 +1,143 @@
+/*
+|----------------------------------------------
+| Chrome frame prompt
+|----------------------------------------------
+*/
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+// img replace
+.img-rep {
+  display:$dbl; overflow:hidden; text-indent:-9999px;
+}
+
+
+// margin top e center
+/*
+.aligntop{
+@extend %aligntop;
+}
+*/
+
+
+// CSS Helpers
+// ------------------------------
+
+
+// cores
+.branco, .branco > p{
+    color:$cl1!important;
+}
+
+.cr         { clear: both; }
+.cl         { clear: left; }
+.cb         { clear: both; }
+
+// Hide and show content
+.hide       { display: none; }
+.show       { display: block ;}
+
+// Visibility
+.invisible  { visibility: hidden; }
+
+// Hide text (image replacement)
+.hide-text {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+// Display
+.di         { display: inline; }
+.db         { display: block; }
+.dib        { display: inline-block; }
+
+// Posicionamentos
+.pos-a      { position: absolute; }
+.pos-r      { position: relative; }
+.affix      { position: fixed; }
+
+
+
+
+// Margins
+.mt-5       { margin-top: 5px; }
+.mr-5       { margin-right: 5px; }
+.mb-5       { margin-bottom: 5px; }
+.ml-5       { margin-bottom: 5px }
+.mt-10      { margin-top: 10px; }
+.mr-10      { margin-right: 10px; }
+.mb-10      { margin-bottom: 10px; }
+.ml-10      { margin-bottom: 10px }
+.mt-15      { margin-top: 15px; }
+.mr-15      { margin-right: 15px; }
+.mb-15      { margin-bottom: 15px; }
+.ml-20      { margin-bottom: 15px }
+.mt-20      { margin-top: 20px; }
+.mr-20      { margin-right: 20px; }
+.mb-20      { margin-bottom: 20px; }
+.ml-20      { margin-bottom: 20px }
+.mt-50      {margin-top: 50px;}
+
+// Paddings
+.pt-pb        { padding:70px 0; }
+.p-5        { padding: 5px; }
+.pt-5       { padding-top: 5px; }
+.pr-5       { padding-right: 5px; }
+.pb-5       { padding-bottom: 5px; }
+.pl-5       { padding-bottom: 5px }
+.p-10       { padding: 10px; }
+.pt-10      { padding-top: 10px; }
+.pr-10      { padding-right: 10px; }
+.pb-10      { padding-bottom: 10px; }
+.pl-10      { padding-bottom: 10px }
+.p-15       { padding: 15px; }
+.pt-15      { padding-top: 15px; }
+.pr-15      { padding-right: 15px; }
+.pb-15      { padding-bottom: 15px; }
+.pl-15      { padding-bottom: 15px }
+.p-20       { padding: 20px; }
+.pt-20      { padding-top: 20px; }
+.pr-20      { padding-right: 20px; }
+.pb-20      { padding-bottom: 20px; }
+.pl-20      { padding-bottom: 20px }
+
+// Reset margin
+.no-margin  { margin: 0; }
+.no-mt      { margin-top: 0; }
+.no-mr      { margin-right: 0; }
+.no-mb      { margin-bottom: 0; }
+.no-ml      { margin-left: 0; }
+.mg-auto    {margin:0 auto; }
+
+// Reset padding
+.no-padding { padding: 0; }
+.no-pt      { padding-top: 0; }
+.no-pr      { padding-right: 0; }
+.no-pb      { padding-bottom: 0; }
+.no-pl      { padding-left: 0; }
+
+// Reset border
+.no-bdr     { border: none; }
+.no-bdr-t   { border-top: 0; }
+.no-bdr-r   { border-right: 0; }
+.no-bdr-b   { border-bottom: 0; }
+.no-bdr-l   { border-left: 0; }
+
+// Text align
+.tal        { text-align: left !important; }
+.tac        { text-align: center !important; }
+.tar        { text-align: right !important; }
+.taj        { text-align: justify !important; }
+
+// Vertical align
+.vat        { vertical-align: top !important; }
+.vatt       { vertical-align: text-top !important; }
+.vab        { vertical-align: bottom !important; }
+.vatb       { vertical-align: text-bottom !important; }
+.vam        { vertical-align: middle !important; }

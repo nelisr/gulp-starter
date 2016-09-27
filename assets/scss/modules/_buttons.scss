@@ -1,0 +1,100 @@
+/*
+|----------------------------------------------
+| Buttons
+|----------------------------------------------
+*/
+
+// bts
+.bts{
+  margin-top:15px;
+  display:table;
+  li{
+    float:left;
+    margin:0 7px;
+  }
+
+  &__bt{
+    display:inline-block;
+  *display:inline;
+	padding:10px 20px;
+	//margin-bottom:10px;
+	font-size:1em;
+  font-family:'robotolight';
+	color:#fff;
+	text-align:center;
+	vertical-align:middle;
+	cursor:pointer;
+  //text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
+  //border-radius:6px;
+  background: #8e8e8e;
+	border-bottom:2px solid #717171;
+    &:hover{
+        background: #a0a0a0;
+    }
+
+  //**
+  // buttons variantes
+  //**
+
+  //black/black
+  &--black{
+    @include bg-bd($cl3, rgba($cl3, .2));
+    padding:10px 8px;
+    &:hover, &:active{
+	    background:rgba($cl3, .4);
+      }
+    }
+
+   // blue
+    &--blue{
+      padding:10px 8px;
+    @include bg-bd($cl2, rgba($cl4, .2));
+    &:hover, &:active{
+	    background:rgba($cl2, .4);
+      }
+    }
+
+    // yellow
+    // &--yellow{
+    //   padding:10px 8px;
+    // @include bg-bd($cl-yellow, rgba($cl-yellow, .2));
+    // color: $cl-black;
+    // &:hover, &:active{
+	  //   background:rgba($cl-yellow, .4);
+    //   }
+    // }
+
+    // table
+    &--table{
+      //@extend %center;
+      width: 100%;
+    }
+
+    &--form{
+    border:0$imp;
+    border-radius: 4px;
+    }
+
+
+
+    //**
+    // buttons variantes
+    //**
+    &--bordered-base{
+      border:1px solid $cl4;
+      background: initial;
+      @extend %center;
+
+    }
+
+
+    &--small{
+      	padding:7px;
+    }
+
+    &--large{
+      padding:15px;
+    }
+
+  }
+}
