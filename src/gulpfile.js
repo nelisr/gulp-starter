@@ -7,10 +7,7 @@
 		cssmin = require( 'gulp-cssmin' ),
 		rename = require( 'gulp-rename' ),
 		watch = require( 'gulp-watch' ),
-		imagemin = require( 'gulp-imagemin' ),
-		imageminGifsicle = require('imagemin-gifsicle'),
-		imageminJpegtran = require('imagemin-jpegtran'),
-		imageminOptipng = require('imagemin-optipng');
+		imagemin = require( 'gulp-imagemin' );
 
 	// Compilar sass em css e mimifica
 	gulp.task('sass', function () {
@@ -26,7 +23,7 @@
 			gulp.src(['../assets/js/main.js','../assets/js/**/*.js'])
 			   .pipe(concat('main.min.js'))
 	           .pipe(uglify())
-	           .pipe(gulp.dest('../build/js')); 
+	           .pipe(gulp.dest('../build/js'));
 	});
 
 	// Comprime imagens
@@ -48,8 +45,6 @@
 	  gulp.watch('../assets/images/*.{png,jpg,gif}',['imagecompress']);
 	  gulp.watch('../assets/images/**/*.{png,jpg,gif}',['imagecompress']);
 	});
-	
-	// Tarefa padrão 
+
+	// Tarefa padrão
 	gulp.task('default', ['watch','jsmin','sass','imagecompress']);
-	    
-	   
