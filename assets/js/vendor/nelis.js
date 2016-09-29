@@ -1,3 +1,3 @@
 $(document).ready(function($){
-    alert('Deu certo de novo!!');
+    alert('Deu certo de novo!');
 });

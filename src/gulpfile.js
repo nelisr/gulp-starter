@@ -36,6 +36,12 @@
 		.pipe(gulp.dest('../build/images'));
 	});
 
+	// copy fonts
+	gulp.task('fonts', function(){
+		return gulp.src(['../assets/fonts/*.{eot,svg,ttf,woff,woff2}'])
+    .pipe(gulp.dest('../build/fonts'));
+	});
+
 	// Observa os arquivos para executar as tarefas
 	gulp.task('watch', function() {
 	  gulp.watch('../assets/js/main.js',['jsmin']);
@@ -44,7 +50,8 @@
 	  gulp.watch('../assets/scss/**/*.scss',['sass']);
 	  gulp.watch('../assets/images/*.{png,jpg,gif}',['imagecompress']);
 	  gulp.watch('../assets/images/**/*.{png,jpg,gif}',['imagecompress']);
+		gulp.watch('../assets/fonts/*.{eot,svg,ttf,woff,woff2}', ['fonts']);
 	});
 
 	// Tarefa padrão
-	gulp.task('default', ['watch','jsmin','sass','imagecompress']);
+	gulp.task('default', ['jsmin','sass','imagecompress','fonts', 'watch']);
