@@ -1,6 +1,4 @@
 
-	"use strict";
-
 	// Include modules requirements.
 	var gulp = require( 'gulp' ),
 		uglify = require( 'gulp-uglify' ),
@@ -9,10 +7,10 @@
 		cssmin = require( 'gulp-cssmin' ),
 		watch = require( 'gulp-watch' ),
 		imagemin = require( 'gulp-imagemin' ),
-		changed = require('gulp-changed'),
-		ngmin = require('gulp-ngmin');
+		clean = require('gulp-clean'),
+		cleanDest = require('gulp-clean-dest');
 
-	// Compilar sass em css e mimifica
+	// Compile sass to css and mimify
 	gulp.task('sass', function () {
 		gulp.src(['../assets/scss/*.scss','../assets/scss/**/*.scss'])
 			.pipe(sass.sync().on('error', sass.logError))
@@ -31,19 +29,20 @@
 
 	// Comprime imagens
 	gulp.task('imagecompress', function(){
-		gulp.src( ['../assets/images/*.{png,jpg,gif}', '../assets/images/**/*.{png,jpg,gif}' ])
+		return gulp.src( ['../assets/images/*.{png,jpg,gif}', '../assets/images/**/*.{png,jpg,gif}' ])
 		.pipe( imagemin({
 			optimizationLevel: 7,
 			progressive: true
 		}))
+		.pipe(cleanDest('../build/images'))
 		.pipe(gulp.dest('../build/images'));
 	});
 
+
 	// copy fonts
-	gulp.task('fonts', function(){
+	gulp.task('fonts',  function(){
 		return gulp.src('../assets/fonts/*.{eot,svg,ttf,woff,woff2}')
-		//.pipe(changed('../build/fonts/*.{eot,svg,ttf,woff,woff2}', {hasChanged: changed.compareLastModifiedTime}))
-		.pipe(changed('../build/fonts'), {hasChanged: changed.compareLastModifiedTime})
+		.pipe(cleanDest('../build/fonts'))
     .pipe(gulp.dest('../build/fonts'));
 	});
 
@@ -67,6 +66,11 @@
 
 	  gulp.watch('../assets/scss/**/*.scss',['sass']);
 		gulp.watch('../assets/scss/**/*.scss', function (event) {
+    	console.log(event);
+  	});
+
+		gulp.watch('../assets/images/*.{png,jpg,gif}',['imagecompress']);
+		gulp.watch('../assets/images/*.{png,jpg,gif}', function (event) {
     	console.log(event);
   	});
 
