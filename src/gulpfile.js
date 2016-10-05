@@ -1,13 +1,16 @@
 
+	"use strict";
+
 	// Include modules requirements.
 	var gulp = require( 'gulp' ),
 		uglify = require( 'gulp-uglify' ),
 		sass = require( 'gulp-sass' ),
 		concat = require('gulp-concat'),
 		cssmin = require( 'gulp-cssmin' ),
-		rename = require( 'gulp-rename' ),
 		watch = require( 'gulp-watch' ),
-		imagemin = require( 'gulp-imagemin' );
+		imagemin = require( 'gulp-imagemin' ),
+		changed = require('gulp-changed'),
+		ngmin = require('gulp-ngmin');
 
 	// Compilar sass em css e mimifica
 	gulp.task('sass', function () {
@@ -38,19 +41,45 @@
 
 	// copy fonts
 	gulp.task('fonts', function(){
-		return gulp.src(['../assets/fonts/*.{eot,svg,ttf,woff,woff2}'])
+		return gulp.src('../assets/fonts/*.{eot,svg,ttf,woff,woff2}')
+		//.pipe(changed('../build/fonts/*.{eot,svg,ttf,woff,woff2}', {hasChanged: changed.compareLastModifiedTime}))
+		.pipe(changed('../build/fonts'), {hasChanged: changed.compareLastModifiedTime})
     .pipe(gulp.dest('../build/fonts'));
 	});
 
 	// Observa os arquivos para executar as tarefas
 	gulp.task('watch', function() {
-	  gulp.watch('../assets/js/main.js',['jsmin']);
+
+		gulp.watch('../assets/js/main.js',['jsmin']);
+		gulp.watch('../assets/js/main.js', function (event) {
+    	console.log(event);
+  	});
+
 	  gulp.watch('../assets/js/**/*.js',['jsmin']);
+		gulp.watch('../assets/js/**/*.js', function (event) {
+    	console.log(event);
+  	});
+
 	  gulp.watch('../assets/scss/style.scss',['sass']);
+		gulp.watch('../assets/scss/style.scss', function (event) {
+    	console.log(event);
+  	});
+
 	  gulp.watch('../assets/scss/**/*.scss',['sass']);
-	  gulp.watch('../assets/images/*.{png,jpg,gif}',['imagecompress']);
-	  gulp.watch('../assets/images/**/*.{png,jpg,gif}',['imagecompress']);
+		gulp.watch('../assets/scss/**/*.scss', function (event) {
+    	console.log(event);
+  	});
+
+		gulp.watch('../assets/images/**/*.{png,jpg,gif}',['imagecompress']);
+		gulp.watch('../assets/images/**/*.{png,jpg,gif}', function (event) {
+    	console.log(event);
+  	});
+
 		gulp.watch('../assets/fonts/*.{eot,svg,ttf,woff,woff2}', ['fonts']);
+		gulp.watch('../assets/fonts/*.{eot,svg,ttf,woff,woff2}', function (event) {
+    	console.log(event);
+  	});
+
 	});
 
 	// Tarefa padrão

@@ -98,3 +98,12 @@
 
   }
 }
+
+.btn-radius{
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  &--orange{
+    background: orange;
+  }
+}

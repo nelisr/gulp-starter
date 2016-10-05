@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-/*html {
+html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -187,7 +187,7 @@ td,
 th {
   padding: 0;
 }
-! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css
+//! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css
 @media print {
   *,
   *:before,
@@ -1112,7 +1112,7 @@ a:focus {
 }
 figure {
   margin: 0;
-}*/
+}
 img {
   vertical-align: middle;
 }
