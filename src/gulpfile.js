@@ -53,7 +53,7 @@
 
 		gulp.watch(['../assets/js/main.js','../assets/js/**/*.js'],['jsmin']);
 
-	  gulp.watch([]'../assets/scss/style.scss', '../assets/scss/**/*.scss'],['sass']);
+	  gulp.watch(['../assets/scss/style.scss', '../assets/scss/**/*.scss'],['sass']);
 
 		gulp.watch(['../assets/images/*.{png,jpg,gif}','../assets/images/**/*.{png,jpg,gif}'],['imagecompress']);
 
