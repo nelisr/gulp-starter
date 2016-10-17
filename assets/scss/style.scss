@@ -51,7 +51,7 @@
 // **
 //@import "global/animate";
 @import "global/variables";
-@import "global/placeholder" ;
+@import "global/placeholder";
 @import "global/mixins";
 @import "global/reset";
 @import "global/normalize";
@@ -60,7 +60,7 @@
 // **
 // MODULES
 // **
-@import "modules/helpers";
+@import "modules/helpers" ;
 @import "modules/bootstrap";
 @import "modules/grid";
 @import "modules/menu";
@@ -89,6 +89,10 @@
 |----------------------------------------------
 */
 
+body{
+	color: red;
+}
+
 //**
 // parallax padrão
 //**
@@ -110,7 +114,7 @@
 
 
 body{
-	background-color: #ccc;
+	background-color: red ;
 }
 
 
@@ -182,7 +186,7 @@ body{
 }
 
 img.aligncenter{
-	display: block;
+	display: block ;
 	margin:auto;
 }
 

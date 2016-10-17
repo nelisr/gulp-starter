@@ -6,8 +6,23 @@
 		concat = require('gulp-concat'),
 		cssmin = require( 'gulp-cssmin' ),
 		watch = require( 'gulp-watch' ),
-		imagemin = require( 'gulp-imagemin' ),
-		cleanDest = require('gulp-clean-dest');
+		del = require('del'),
+		clean = require('gulp-clean'),
+		debug = require('gulp-debug');
+
+	// delete files in build/images
+	gulp.task('cleanimages', function(){
+  		return gulp.src('../build/images', {read: false})
+  		.pipe(debug({title: 'unicorn:'}))
+        .pipe(clean({force: true}));
+	});	
+
+	// delete files in build/fonts
+	gulp.task('cleanfonts', function(){
+  		return gulp.src('../build/fonts', {read: false})
+  		.pipe(debug({title: 'unicorn:'}))
+        .pipe(clean({force: true}));
+	});	
 
 	// Compile sass to css and mimify
 	gulp.task('sass', function () {
@@ -15,51 +30,46 @@
 			.pipe(sass.sync().on('error', sass.logError))
 			.pipe(concat('style.min.css'))
 			.pipe(cssmin())
+			.pipe(debug({title: 'unicorn:'}))
 			.pipe(gulp.dest('../build/css'));
 	});
 
-	// Mimifica arquivos JS e joga para dentro de 'build/js'
+	// Minify JS files and plays into'build/js'
 	gulp.task('jsmin', function() {
 			gulp.src(['../assets/js/main.js','../assets/js/**/*.js'])
-			   .pipe(concat('main.min.js'))
-	       .pipe(uglify())
-				 .on('error', console.error.bind(console))
-	       .pipe(gulp.dest('../build/js'));
+			.pipe(concat('main.min.js'))
+	       	.pipe(uglify())
+			.pipe(debug({title: 'unicorn:'}))
+	       	.pipe(gulp.dest('../build/js'));
 	});
 
-	// Comprime imagens
-	gulp.task('imagecompress', function(){
+	// Comprime images
+	gulp.task('images', ['cleanimages'], function(){
 		return gulp.src( ['../assets/images/*.{png,jpg,gif}', '../assets/images/**/*.{png,jpg,gif}' ])
-		.pipe( imagemin({
-			optimizationLevel: 7,
-			progressive: true
-		}))
-		.on('error', console.error.bind(console))
-		.pipe(cleanDest('../build/images'))
+		.pipe(debug({title: 'unicorn:'}))
 		.pipe(gulp.dest('../build/images'));
 	});
 
 
-	// copy fonts
-	gulp.task('fonts',  function(){
+	// Copy fonts
+	gulp.task('fonts', ['cleanfonts'], function(){
 		return gulp.src('../assets/fonts/*.{eot,svg,ttf,woff,woff2}')
-		.pipe(cleanDest('../build/fonts'))
-		.on('error', console.error.bind(console))
-    .pipe(gulp.dest('../build/fonts'));
+		.pipe(debug({title: 'unicorn:'}))
+    	.pipe(gulp.dest('../build/fonts'));
 	});
 
-	// Observa os arquivos para executar as tarefas
+	// watch files for execute tasks
 	gulp.task('watch', function() {
+	
+		gulp.watch(['../assets/js/main.js','../assets/js/**/*.js'], ['jsmin']);
 
-		gulp.watch(['../assets/js/main.js','../assets/js/**/*.js'],['jsmin']);
+	  	gulp.watch(['../assets/scss/style.scss', '../assets/scss/**/*.scss'], ['sass']);
 
-	  gulp.watch(['../assets/scss/style.scss', '../assets/scss/**/*.scss'],['sass']);
-
-		gulp.watch(['../assets/images/*.{png,jpg,gif}','../assets/images/**/*.{png,jpg,gif}'],['imagecompress']);
+		gulp.watch(['../assets/images/*.{png,jpg,gif}','../assets/images/**/*.{png,jpg,gif}'], ['images']);
 
 		gulp.watch('../assets/fonts/*.{eot,svg,ttf,woff,woff2}', ['fonts']);
 
 	});
 
-	// Tarefa padrão
-	gulp.task('default', ['jsmin','sass','imagecompress','fonts', 'watch']);
+	// Task Default
+	gulp.task('default', ['jsmin','sass','images','fonts', 'watch']);
